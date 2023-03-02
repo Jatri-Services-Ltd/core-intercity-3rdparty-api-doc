@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="w-full">
+    <div id="col-1" class="px-12 pt-10 pb-10 md:px-32 xl:px-32" style="background: #f04935">
+        <h1 class="text-white font-extrabold text-4xl md:text-6xl">
+            Jatri API Documentation
+        </h1>
+        <p class="text-white text-normal md:text-2xl pt-3 md:pt-6 font-medium">Documentation Version 1.0 </p>
+    </div>
+    <div class="md:px-[100px] h-[calc(full-112px)] ">
+        <div class="md:bg-white p-4 md:p-[40px]">
+            <div class="md:flex md:gap-x-[32px]">
+                <div class="hidden md:block w-[300px] bg-[#F7F7F7] rounded-[14px] p-6">
+                    <div class="sticky top-24">
+                        <p class="text-base font-medium text-blackPrimary">Table of contents</p>
+                        <hr class="mt-2 border-t border-[#DBDBDB]">
+                        <a href="#terms-and-conditions"
+                           :class="$route.hash === '#terms-and-conditions' ? 'text-white bg-[#1E88E5]' : 'text-black bg-transparent' "
+                           class="block w-full leading-5 text-sm font-medium p-2 rounded">Terms & Conditions</a>
+                        <a href="#return-and-refund-policy"
+                           :class="$route.hash === '#return-and-refund-policy'  ? 'text-white bg-[#1E88E5]' : 'text-black bg-transparent' "
+                           class="mt-4 block w-full leading-5 text-sm font-medium p-2 rounded">Return & Refund
+                            Policies</a>
+                        <a href="#privacy-policy"
+                           :class="$route.hash === '#privacy-policy' ? 'text-white bg-[#1E88E5]' : 'text-black bg-transparent' "
+                           class="mt-4 block w-full leading-5 text-sm font-medium p-2 rounded">Privacy Policy </a>
+                    </div>
+                </div>
+
+                <!-- content start -->
+                <div class="bg-white p-4 w-full">
+                    <div :class="$route.hash === '#return-and-refund-policy' ? 'mt-20' : ' '">
+                        <p class="mt-6 text-blackPrimary leading-8 md:leading-9 text-2xl md:text-[28px] font-medium md:font-semibold">
+                            Return & Refund Policies</p>
+                        <p class="text-base font-normal text-blackPrimary mt-4">Before buying a ticket, customers are
+                            requested to read the following cancellation and refund policies carefully.</p>
+                        <p class="text-base font-medium text-blackPrimary mt-4">Cancellation Policy:</p>
+                        <p class="text-base font-normal text-blackPrimary text-justify">Tickets bought through Jatri.co
+                            can be cancelled as per the cancellation policy below.
+                            However, as a ticket selling agent, Jatri.co is bound to comply with the terms set by the
+                            operator/event organizer/vendor whose ticket it is selling. So, if the operator/event
+                            organizer
+                            denies refund even though claim was made within the terms mentioned here, Jatri.co will be
+                            unable to issue such refund.
+                        </p>
+
+                        <p class="text-base font-medium text-blackPrimary mt-4">Auto Cancellation:</p>
+                        <p class="text-base font-normal text-blackPrimary text-justify">The ticket will be treated as
+                            cancelled if passenger fails to report at the reporting station before the departure
+                            schedule.</p>
+
+                        <p class="text-base font-medium text-blackPrimary mt-4">Failure to Pay:</p>
+                        <p class="text-base font-normal text-blackPrimary">No ticket will be activated unless the
+                            customer has paid the full amount mentioned on the screen.</p>
+                        <p class="text-base font-normal text-blackPrimary text-justify">For mobile payments, it is the
+                            responsibility of the customer to input transaction ID (if
+                            applicable), PIN, OTP properly within time to confirm his ticket by himself. Jatri.co
+                            sometimes does the verification for the customer as a courtesy, but it is not jatri.co’s
+                            responsibility or service promise.
+                        </p>
+
+                        <p class="text-base font-normal text-blackPrimary text-justify">Tickets will be automatically
+                            cancelled if customer does not confirm payment within 30
+                            minutes. For mobile payments customer must complete payment and also verify transaction
+                            within this stipulated time. During Eid sales month, Jatri.co will not do any verification
+                            on
+                            behalf of the customers.
+                        </p>
+
+                        <p class="text-base font-medium text-blackPrimary mt-4">Ticket cancellation eligibility:</p>
+                        <p class="text-base font-medium text-blackPrimary mt-4">Regular Time (Non-Eid Period):</p>
+
+                        <p class="text-base font-medium text-blackPrimary mt-4 text-justify">To be eligible for refund,
+                            customer needs to cancel the ticket from jatri.co before the
+                            applicable time before the departure. And must report the cancelation to the support centre
+                            (i.e. Call 09642080808 or email to support@jatri.co) of Jatri.co
+                        </p>
+                        <!--table-->
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <table class="min-w-full text-center">
+                                <thead>
+                                <tr class="bg-[#F7F7F7] p-1 leading-[16px] md:leading-6 text-[12px] md:text-[16px] font-medium">
+                                    <th class="p-1 md:p-4 border-r border-[#DBDBDB]">Operator</th>
+                                    <th class="p-1 md:p-4 border-r border-[#DBDBDB]">Hours before trip time</th>
+                                    <th class="p-1 md:p-4">Remarks</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="leading-[16px] md:leading-6 text-[12px] md:text-[16px] font-medium">
+                                    <td class="p-1 md:p-4 border-r border-[#DBDBDB]">Jatri Online</td>
+                                    <td class="p-1 md:p-4 border-r border-[#DBDBDB]">12 hours</td>
+                                    <td class="p-1 md:p-4 border-r border-[#DBDBDB]">Excluding 12:00 AM to 06:00 AM</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <hr id="privacy-policy" class="mt-6 border-t border-[#DBDBDB]">
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
