@@ -4,7 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <title>Jatri API Documentation</title>
 </head>
+<style>
+    html{
+        scroll-behavior: smooth;
+    }
+</style>
 <body>
 <div class="w-full">
     <div id="col-1" class="px-12 pt-10 pb-10 md:px-32 xl:px-32" style="background: #f04935">
@@ -17,90 +23,168 @@
         <div class="md:bg-white p-4 md:p-[40px]">
             <div class="md:flex md:gap-x-[32px]">
                 <div class="hidden md:block w-[300px] bg-[#F7F7F7] rounded-[14px] p-6">
-                    <div class="sticky top-24">
-                        <p class="text-base font-medium text-blackPrimary">Table of contents</p>
-                        <hr class="mt-2 border-t border-[#DBDBDB]">
-                        <a href="#terms-and-conditions"
-                           :class="$route.hash === '#terms-and-conditions' ? 'text-white bg-[#1E88E5]' : 'text-black bg-transparent' "
-                           class="block w-full leading-5 text-sm font-medium p-2 rounded">Terms & Conditions</a>
-                        <a href="#return-and-refund-policy"
-                           :class="$route.hash === '#return-and-refund-policy'  ? 'text-white bg-[#1E88E5]' : 'text-black bg-transparent' "
-                           class="mt-4 block w-full leading-5 text-sm font-medium p-2 rounded">Return & Refund
-                            Policies</a>
-                        <a href="#privacy-policy"
-                           :class="$route.hash === '#privacy-policy' ? 'text-white bg-[#1E88E5]' : 'text-black bg-transparent' "
-                           class="mt-4 block w-full leading-5 text-sm font-medium p-2 rounded">Privacy Policy </a>
+                    <div class="sticky top-24 space-y-2">
+                        <a href="#getting-started" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">getting started</a>
+                        <a href="#get-city-list" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get city list</a>
+                        <a href="#get-scheduled-data" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get scheduled data</a>
+                        <a href="#get-seatview" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get seatview</a>
+                        <a href="#get-seat-status" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get seat status</a>
+                        <a href="#create-payment-pending" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">create payment pending</a>
+                        <a href="#block" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">block</a>
+                        <a href="#confirm-ticket" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">confirm ticket</a>
+                        <a href="#cancel-success-ticket" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">cancel success ticket</a>
+                        <a href="#cancel-booked-ticket" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">cancel booked ticket</a>
+                        <a href="#get-user-settings" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get user settings</a>
+                        <a href="#get-ticket-status" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get ticket status</a>
                     </div>
                 </div>
 
                 <!-- content start -->
                 <div class="bg-white p-4 w-full">
-                    <div :class="$route.hash === '#return-and-refund-policy' ? 'mt-20' : ' '">
-                        <p class="mt-6 text-blackPrimary leading-8 md:leading-9 text-2xl md:text-[28px] font-medium md:font-semibold">
-                            Return & Refund Policies</p>
-                        <p class="text-base font-normal text-blackPrimary mt-4">Before buying a ticket, customers are
-                            requested to read the following cancellation and refund policies carefully.</p>
-                        <p class="text-base font-medium text-blackPrimary mt-4">Cancellation Policy:</p>
-                        <p class="text-base font-normal text-blackPrimary text-justify">Tickets bought through Jatri.co
-                            can be cancelled as per the cancellation policy below.
-                            However, as a ticket selling agent, Jatri.co is bound to comply with the terms set by the
-                            operator/event organizer/vendor whose ticket it is selling. So, if the operator/event
-                            organizer
-                            denies refund even though claim was made within the terms mentioned here, Jatri.co will be
-                            unable to issue such refund.
-                        </p>
-
-                        <p class="text-base font-medium text-blackPrimary mt-4">Auto Cancellation:</p>
-                        <p class="text-base font-normal text-blackPrimary text-justify">The ticket will be treated as
-                            cancelled if passenger fails to report at the reporting station before the departure
-                            schedule.</p>
-
-                        <p class="text-base font-medium text-blackPrimary mt-4">Failure to Pay:</p>
-                        <p class="text-base font-normal text-blackPrimary">No ticket will be activated unless the
-                            customer has paid the full amount mentioned on the screen.</p>
-                        <p class="text-base font-normal text-blackPrimary text-justify">For mobile payments, it is the
-                            responsibility of the customer to input transaction ID (if
-                            applicable), PIN, OTP properly within time to confirm his ticket by himself. Jatri.co
-                            sometimes does the verification for the customer as a courtesy, but it is not jatri.co’s
-                            responsibility or service promise.
-                        </p>
-
-                        <p class="text-base font-normal text-blackPrimary text-justify">Tickets will be automatically
-                            cancelled if customer does not confirm payment within 30
-                            minutes. For mobile payments customer must complete payment and also verify transaction
-                            within this stipulated time. During Eid sales month, Jatri.co will not do any verification
-                            on
-                            behalf of the customers.
-                        </p>
-
-                        <p class="text-base font-medium text-blackPrimary mt-4">Ticket cancellation eligibility:</p>
-                        <p class="text-base font-medium text-blackPrimary mt-4">Regular Time (Non-Eid Period):</p>
-
-                        <p class="text-base font-medium text-blackPrimary mt-4 text-justify">To be eligible for refund,
-                            customer needs to cancel the ticket from jatri.co before the
-                            applicable time before the departure. And must report the cancelation to the support centre
-                            (i.e. Call 09642080808 or email to support@jatri.co) of Jatri.co
-                        </p>
+                    <div>
+                        <h2 class="text-5xl">Introduction</h2>
+                        <hr class="w-36 my-6 border-t-gray-800">
+                        <div class="mt-12 bg-gray-100 p-8 text-gray-600 space-y-2">
+                            <p><span class="text-gray-900 font-semibold">Item Name :</span> Paribahan ticket search, booking and purchased system</p>
+                            <p><span class="text-gray-900 font-semibold">Item Version :</span> v 2.0</p>
+                            <p><span class="text-gray-900 font-semibold">Author :</span> <a href="#" class="text-blue-400">Paribahan Devs</a></p>
+                        </div>
+                        <hr class="mt-4">
+                        <div class="mt-6 text-gray-500 text-[16px] space-y-8">
+                            <p>First of all, Thank you so much for using our API.</p>
+                            <p>This documentation is to help you regarding each step of customization. Please go through the documentation carefully to understand how this Works.</p>
+                            <p>API documentaion are arranged in order by which they will need to be called.</p>
+                        </div>
+                        <div class="mt-8 text-gray-500 text-[15px]">
+                            <p class="font-semibold text-gray-800 text-2xl pb-6">Important notes</p>
+                            <ol class="pl-8 space-y-2">
+                                <li>1. First you will need username and password to get API data</li>
+                                <li>2. You will have to provied user access token every time you call API</li>
+                                <li>3. Only those bus will be shown for a user which are allowed to a user.</li>
+                                <li>4. When a tickets are booked then it will available for a user for certain amount of time to complete the process.</li>
+                                <li>5. Not every time or every user or every bus ticket will have the access to cancel ticket.</li>
+                                <li>6. Authority will preserve the right to do anything</li>
+                            </ol>
+                        </div>
+                    </div>
+                    <div id="getting-started">
+                        <p class="mt-24 mb-8 text-blackPrimary leading-8 md:leading-9 text-5xl">Getting Started</p>
+                        <hr class="w-44 my-6 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 01)</span> <span class="font-semibold text-2xl">Get Access token</span></p>
                         <!--table-->
                         <div class="mt-4 border border-[#DBDBDB] rounded">
-                            <table class="min-w-full text-center">
-                                <thead>
-                                <tr class="bg-[#F7F7F7] p-1 leading-[16px] md:leading-6 text-[12px] md:text-[16px] font-medium">
-                                    <th class="p-1 md:p-4 border-r border-[#DBDBDB]">Operator</th>
-                                    <th class="p-1 md:p-4 border-r border-[#DBDBDB]">Hours before trip time</th>
-                                    <th class="p-1 md:p-4">Remarks</th>
-                                </tr>
-                                </thead>
+                            <table class="min-w-full overflow-s-scroll">
                                 <tbody>
-                                <tr class="leading-[16px] md:leading-6 text-[12px] md:text-[16px] font-medium">
-                                    <td class="p-1 md:p-4 border-r border-[#DBDBDB]">Jatri Online</td>
-                                    <td class="p-1 md:p-4 border-r border-[#DBDBDB]">12 hours</td>
-                                    <td class="p-1 md:p-4 border-r border-[#DBDBDB]">Excluding 12:00 AM to 06:00 AM</td>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Url</td>
+                                        <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">https://paribahan.com/api/oauth/access_token</td>
+                                    </tr>
+                                </tbody>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Method/Action Type</td>
+                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
                                 </tr>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Return Response</td>
+                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                </tr>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px] uppercase">NOTE</td>
+                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase">ACCESS TOKET WILL BE AVAILABLE/WORKED FOR NEXT 24 HOURS ONCE ITS CREATED</td>
+                                </tr>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">grant_type</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">your value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">client_id</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret client id</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">client_secret</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret code</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">username</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret user name</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">password</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret user name</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                    </tr>
                                 </tbody>
                             </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
                         </div>
-                        <hr id="privacy-policy" class="mt-6 border-t border-[#DBDBDB]">
+                        <!-- <hr id="privacy-policy" class="mt-6 border-t border-[#DBDBDB]"> -->
+                    </div>
+                    <div id="get-city-list">
+                        <p class="mt-24 mb-8 text-blackPrimary leading-8 md:leading-9 text-5xl">Get City List</p>
+                        <hr class="w-44 my-6 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 02)</span> <span class="font-semibold text-2xl">Get City List</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <table class="min-w-full overflow-s-scroll">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Url</td>
+                                        <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">https://paribahan.com/api/oauth/access_token</td>
+                                    </tr>
+                                </tbody>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Method/Action Type</td>
+                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
+                                </tr>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Return Response</td>
+                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
+                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                </tr>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Authorization</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Bearer 96s2prk4Ud5gOEfYkUrafSU25d</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
