@@ -1048,5 +1048,35 @@
                 </div>
             </div>
         </div>
+
+<script>
+    function setActive(id) {
+        // linkObj = document.getElementById('sidenav').getElementsByTagName('a');
+        // console.log(linkObj, 'object');
+        // for(i=0;i<linkObj.length;i++) { 
+        // if(document.location.href.indexOf(linkObj[i].href)>=0) {
+        //     linkObj[i].classList.add("active");
+        // }
+        // }
+        console.log(id, 'id');
+
+    }
+
+    const sideMenuItem = document.querySelectorAll('.side-menu');
+
+    sideMenuItem.forEach(function(currentMenu){
+        currentMenu.addEventListener('click', function(e){
+            const menuStyle = e.currentTarget.classList;
+            const menuHref = e.currentTarget[0].href;
+            console.log( menuHref, 'slug');
+            if(!menuStyle.contains('active')){
+                menuStyle.add('active')
+                console.log(menuHref, 'href');
+            }
+        })
+    })
+
+    // window.onload = setActive;
+</script>  
 </body>
 </html>
