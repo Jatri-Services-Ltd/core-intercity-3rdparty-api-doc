@@ -10,6 +10,29 @@
     html{
         scroll-behavior: smooth;
     }
+    /* .horizontal-taskbar:hover{
+        overflow-x: overlay;
+    } */
+    .horizontal-taskbar::-webkit-scrollbar-track
+    {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+
+    .horizontal-taskbar::-webkit-scrollbar
+    {
+        padding-top: 10px;
+        height: 7px;
+        background-color: #F5F5F5;
+    }
+
+    .horizontal-taskbar::-webkit-scrollbar-thumb
+    {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+        background-color: #8b8b8b;
+    }
 </style>
 <body>
 <div class="w-full">
@@ -24,18 +47,15 @@
             <div class="md:flex lg:gap-x-[32px]">
                 <div class="hidden md:block w-[300px] bg-[#F7F7F7] rounded-[14px] p-6">
                     <div class="sticky top-24 space-y-2">
-                        <a href="#getting-started" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">getting started</a>
-                        <a href="#get-city-list" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get city list</a>
-                        <a href="#get-scheduled-data" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get scheduled data</a>
-                        <a href="#get-seatview" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get seatview</a>
-                        <a href="#get-seat-status" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get seat status</a>
-                        <a href="#create-payment-pending" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">create payment pending</a>
-                        <a href="#block" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">block</a>
-                        <a href="#confirm-ticket" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">confirm ticket</a>
-                        <a href="#cancel-success-ticket" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">cancel success ticket</a>
-                        <a href="#cancel-booked-ticket" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">cancel booked ticket</a>
-                        <a href="#get-user-settings" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get user settings</a>
-                        <a href="#get-ticket-status" class="block w-full text-[15px] rounded capitalize hover:text-blue-600">get ticket status</a>
+                        <a href="#getting-started" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">getting started</a>
+                        <a href="#get-city-list" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">get all cities</a>
+                        <a href="#get-trips" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">get trips</a>
+                        <a href="#get-seat-plan" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">get seat plan</a>
+                        <a href="#ticket-pending-block" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">Ticket pending block</a>
+                        <a href="#ticket-purchase" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">Ticket Purchase</a>
+                        <a href="#ticket-cancel" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">Ticket Cancel</a>
+                        <a href="#ticket-status" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">Ticket Status</a>
+                        <a href="#ticket-search" class="block w-full text-[15px] rounded capitalize hover:text-blue-400">Ticket Search</a>
                     </div>
                 </div>
 
@@ -46,7 +66,7 @@
                         <hr class="w-36 my-6 border-t-gray-800">
                         <div class="mt-12 bg-gray-100 p-8 text-gray-600 space-y-2">
                             <p><span class="text-gray-900 font-semibold">Item Name :</span> Paribahan ticket search, booking and purchased system</p>
-                            <p><span class="text-gray-900 font-semibold">Item Version :</span> v 2.0</p>
+                            <p><span class="text-gray-900 font-semibold">Item Version :</span> v 1.0</p>
                             <p><span class="text-gray-900 font-semibold">Author :</span> <a href="#" class="text-blue-400">Paribahan Devs</a></p>
                         </div>
                         <hr class="mt-4">
@@ -68,34 +88,33 @@
                         </div>
                     </div>
                     <div id="getting-started">
-                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-5xl text-4xl">Getting Started</p>
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">Getting Started</p>
                         <hr class="w-44 md:my-6 my-4 border-t-gray-800">
-                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 01)</span> <span class="font-semibold text-2xl">Get Access token</span></p>
-                        <!--table-->
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 01)</span> <span class="text-2xl capitalize">Get Access token</span></p>
                         <div class="mt-4 border border-[#DBDBDB] rounded">
-                            <div class="overflow-x-auto">
+                            <div class="overflow-x-auto horizontal-taskbar">
                                 <table class="min-w-full">
                                     <tbody>
                                         <tr class="text-[12px] md:text-[15px]">
-                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500">Url</td>
-                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center">:</td>
-                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">https://paribahan.com/api/oauth/access_token</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/login</td>
                                         </tr>
                                     </tbody>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500">Method/Action Type</td>
-                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
                                         <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
                                     </tr>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500">Return Response</td>
-                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
                                         <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
                                     </tr>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase">NOTE</td>
-                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center">:</td>
-                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase">ACCESS TOKET WILL BE AVAILABLE/WORKED FOR NEXT 24 HOURS ONCE ITS CREATED</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
                                     </tr>
                                 </table>
                             </div>
@@ -103,91 +122,705 @@
                             <table class="min-w-full">
                                 <tbody>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700">Param name</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
                                         <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Required</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
                                     </tr>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">grant_type</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">your value</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
-                                    </tr>
-                                    <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">client_id</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret client id</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
-                                    </tr>
-                                    <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">client_secret</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret code</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
-                                    </tr>
-                                    <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">username</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">username</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
                                         <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret user name</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
                                     </tr>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">password</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">password</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
                                         <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret user name</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="text-center border-t border-b mt-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "access_token": "96s2prk4Ud5gOEfYkUrafSU25d",
+                                                "token_type": "bearer",
+                                                "expires": 1561466857,
+                                                "expires_in": 01
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
                         </div>
-                        <!-- <hr id="privacy-policy" class="mt-6 border-t border-[#DBDBDB]"> -->
                     </div>
-                    <!-- <div id="get-city-list">
-                        <p class="mt-24 mb-8 text-blackPrimary leading-8 md:leading-9 text-5xl">Get City List</p>
-                        <hr class="w-44 my-6 border-t-gray-800">
-                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 02)</span> <span class="font-semibold text-2xl">Get City List</span></p>
+                    <div id="get-city-list">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">Get all cities</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 02)</span> <span class="text-2xl capitalize">Get all cities</span></p>
                         <div class="mt-4 border border-[#DBDBDB] rounded">
-                            <table class="min-w-full overflow-s-scroll table-auto">
-                                <tbody>
+                            <div class="overflow-x-auto horizontal-taskbar">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/cities</td>
+                                        </tr>
+                                    </tbody>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Url</td>
-                                        <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
-                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">https://paribahan.com/api/oauth/access_token</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form GET</td>
                                     </tr>
-                                </tbody>
-                                <tr class="text-[12px] md:text-[15px]">
-                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Method/Action Type</td>
-                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
-                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
-                                </tr>
-                                <tr class="text-[12px] md:text-[15px]">
-                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-[250px]">Return Response</td>
-                                    <td class="py-1 px-3 border-r border-b border-[#DBDBDB] w-5">:</td>
-                                    <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
-                                </tr>
-                            </table>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
                             <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
                             <table class="min-w-full">
                                 <tbody>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700">Param name</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
                                         <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Required</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <!-- <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">username</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">your secret user name</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr> -->
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <!-- <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "access_token": "96s2prk4Ud5gOEfYkUrafSU25d",
+                                                "token_type": "bearer",
+                                                "expires": 1561466857,
+                                                "expires_in": 01
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div id="get-trips">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">Get trips</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 03)</span> <span class="text-2xl capitalize">Get trips</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto horizontal-taskbar">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/trip/search-trips?from=Dhaka&to=Cox's Bazar&busType=ALL&date=2023-03-03</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form GET</td>
                                     </tr>
                                     <tr class="text-[12px] md:text-[15px]">
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Authorization</td>
-                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">String</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Bearer 96s2prk4Ud5gOEfYkUrafSU25d</td>
-                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Yes</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">from</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">City name from the city list</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">to</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">City name from the city list</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">busType</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">export enum BusType {
+                                            AC = 'AC',
+                                            NON_AC = 'NON_AC',
+                                            ALL = 'ALL',
+                                          }
+                                          </td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">date</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">Date must be greater than today</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "from": "Dhaka",
+                                                "to": "Bandarban",
+                                                "BusType": "",
+                                                "Date": "05-03-2023"
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
                         </div>
-                    </div> -->
+                    </div>
+                    <div id="get-seat-plan">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">Get seat plan</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 04)</span> <span class="text-2xl capitalize">Get seat plan</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto horizontal-taskbar">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/trip/trip/seat-plan?from=Dhaka&to=Cox's Bazar&trip=63ff020685761a1d97b99e70</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form GET</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">from</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">City name from the city list</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">to</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">City name from the city list</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">trip</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "from": "Dhaka",
+                                                "to": "Bandarban",
+                                                "trip": ""
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ticket-pending-block">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">ticket pending block</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 05)</span> <span class="text-2xl capitalize">ticket pending block</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/ticket-pending-block</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">trip</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">from</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">City name from the city list</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">to</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500">City name from the city list</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">originStoppage</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">boardingPlace</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">seats</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">seatFare</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">payable</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">paid</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">farePerSeat</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">farePerTicket</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">passengerName</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">passengerPhone</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">passengerEmail</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">passengerAddress</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">passengerGender</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">passengerNid</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "trip": "63ff020685761a1d97b99e70",
+                                                "from": "Dhaka",
+                                                "to": "Cox's Bazar",
+                                                "originStoppage": "63ccd47bbedc9f1b5e1317ed",
+                                                "boardingPlace": "63ccf83ae5d60839fe34b8ad",
+                                                "seats": [
+                                                    "D3",
+                                                    "D4"
+                                                ],
+                                                "seatFare": 3000,
+                                                "payable": 3000,
+                                                "paid": 0,
+                                                "farePerSeat": [
+                                                    {
+                                                        "seat": "D3",
+                                                        "fare": 1500
+                                                    },
+                                                    {
+                                                        "seat": "D4",
+                                                        "fare": 1500
+                                                    }
+                                                ],
+                                                "farePerTicket": 1500,
+                                                "passengerName": "Shovon",
+                                                "passengerPhone": "01983285059",
+                                                "passengerEmail": "mhshovon.jatri@gmail.com",
+                                                "passengerAddress": "dhaka",
+                                                "passengerGender": "MALE",
+                                                "passengerNid": "10384739274"
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ticket-purchase">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">ticket purchase</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 06)</span> <span class="text-2xl capitalize">ticket purchase</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/ticket-purchase</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">dtId</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "dtId": "64006f60fa64e34feba11f15"
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ticket-cancel">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">ticket cancel</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 07)</span> <span class="text-2xl capitalize">ticket cancel</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/ticket-cancel</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form POST</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">dtId</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "dtId": "64006f60fa64e34feba11f15"
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ticket-status">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">ticket status</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 08)</span> <span class="text-2xl capitalize">ticket status</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/ticket-status</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form GET</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">dtId</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "dtId": "64006f60fa64e34feba11f15"
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="ticket-search">
+                        <p class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize">ticket search</p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800">
+                        <p class="text-[18px] py-5"><span class="text-gray-500">Step 09)</span> <span class="text-2xl capitalize">ticket search</span></p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto">
+                                <table class="min-w-full">
+                                    <tbody>
+                                        <tr class="text-[12px] md:text-[15px]">
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Url</td>
+                                            <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                            <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto">base_url/ticket-search</td>
+                                        </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Method/Action Type</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">Form GET</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6">Return Response</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500">json format</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6">NOTE</td>
+                                        <td class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]">:</td>
+                                        <td class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Body / Params</p></div>
+                            <table class="min-w-full">
+                                <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6">Param name</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">Type</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500">Value</td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Required</td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">pnrOrPhone</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12">String</td>
+                                        <td class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"></td>
+                                        <td class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6">Yes</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b my-6 p-1"><p class="font-semibold text-gray-500">Sample Response</p></div>
+                            <div class="bg-gray-700 text-gray-300 overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                                    <pre>
+                                        <code>
+                                            {
+                                                "pnrOrPhone": "KIpQxyFe3RDjPqu"
+                                            }
+                                        </code>
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
