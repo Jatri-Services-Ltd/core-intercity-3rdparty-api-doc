@@ -34,14 +34,18 @@
 
     .active {
         color: white;
-        background-color: #f04935;
+        background-color: #6600d1;
         padding: 5px;
     }
 
     .active:hover {
         color: white;
-        background-color: #f04935;
+        background-color: #6600d1;
         padding: 5px;
+    }
+
+    .bg-primary {
+        background-color: #6600d1;
     }
 
     .loader {
@@ -59,9 +63,8 @@
 <div class="w-full">
     <div class="loader"></div>
     <div
-            class="px-8 md:px-12 pt-10 pb-10 md:px-32"
+            class="px-8 md:px-12 pt-10 pb-10 md:px-32 bg-primary"
             id="col-1"
-            style="background: #f04935"
     >
         <h1 class="text-white font-extrabold text-4xl md:text-6xl">
             Jatri API Documentation
@@ -14098,7 +14101,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/v2/ticket-purchase
+                                            {{baseUrl}}/v3/ticket-purchase
                                         </td>
                                     </tr>
                                     </tbody>
@@ -14268,7 +14271,7 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location '{{baseUrl}}/ticket-purchase' \
+                                          curl --location '{{baseUrl}}/v3/ticket-purchase' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
                                           --data '{
@@ -14385,7 +14388,7 @@
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
                                     >
-                                        /v2/ticket-purchase
+                                        /v3/ticket-purchase
                                     </td>
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
@@ -14417,7 +14420,7 @@
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
                                     >
-                                        /v2/ticket-purchase
+                                        /v3/ticket-purchase
                                     </td>
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
@@ -14463,7 +14466,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/ticket-cancel
+                                            {{baseUrl}}/v2/ticket-cancel
                                         </td>
                                     </tr>
                                     </tbody>
@@ -14633,7 +14636,7 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location '{{baseUrl}}/ticket-purchase' \
+                                          curl --location '{{baseUrl}}/v2/ticket-cancel' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
                                           --data '{
@@ -14860,7 +14863,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/ticket-status
+                                            {{baseUrl}}/v2/ticket-status
                                         </td>
                                     </tr>
                                     </tbody>
@@ -15030,7 +15033,7 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location --request GET '{{baseUrl}}/ticket-status' \
+                                          curl --location --request GET '{{baseUrl}}/v2/ticket-status' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
                                           --data '{
@@ -15159,7 +15162,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/ticket-search
+                                            {{baseUrl}}/v3/ticket-search
                                         </td>
                                     </tr>
                                     </tbody>
@@ -15329,7 +15332,7 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location --request GET '{{baseUrl}}/ticket-search' \
+                                          curl --location --request GET '{{baseUrl}}/v3/ticket-search' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
                                           --data '{
