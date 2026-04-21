@@ -92,6 +92,11 @@
                         >
                         <a
                                 class="block w-full text-[15px] rounded capitalize"
+                                href="#get-company-list"
+                        >get company list</a
+                        >
+                        <a
+                                class="block w-full text-[15px] rounded capitalize"
                                 href="#get-trips"
                         >get trips</a
                         >
@@ -654,6 +659,190 @@
                                           }
                                       </code>
                                   </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="page-section" id="get-company-list">
+                        <p
+                                class="md:mt-24 mt-20 mb-8 text-blackPrimary leading-8 md:leading-9 md:text-4xl text-3xl capitalize"
+                        >
+                            Get company list
+                        </p>
+                        <hr class="w-44 md:my-6 my-4 border-t-gray-800"/>
+                        <p class="text-[18px] py-5">
+                            <span class="text-gray-500">Step 02.1)</span>
+                            <span class="text-2xl capitalize">Get company list</span>
+                        </p>
+                        <div class="mt-4 border border-[#DBDBDB] rounded">
+                            <div class="overflow-x-auto horizontal-taskbar">
+                                <table class="min-w-full mb-1">
+                                    <tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6"
+                                        >
+                                            Url
+                                        </td>
+                                        <td
+                                                class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]"
+                                        >
+                                            :
+                                        </td>
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
+                                        >
+                                            {{baseUrl}}/company/list
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6"
+                                        >
+                                            Method/Action Type
+                                        </td>
+                                        <td
+                                                class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]"
+                                        >
+                                            :
+                                        </td>
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500"
+                                        >
+                                            Form GET
+                                        </td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 w-1/6"
+                                        >
+                                            Return Response
+                                        </td>
+                                        <td
+                                                class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]"
+                                        >
+                                            :
+                                        </td>
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500"
+                                        >
+                                            json format
+                                        </td>
+                                    </tr>
+                                    <tr class="text-[12px] md:text-[15px]">
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] font-semibold text-gray-500 uppercase w-1/6"
+                                        >
+                                            NOTE
+                                        </td>
+                                        <td
+                                                class="py-1 px-2 border-r border-b border-[#DBDBDB] text-center w-[28px]"
+                                        >
+                                            :
+                                        </td>
+                                        <td
+                                                class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 uppercase"
+                                        ></td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div class="text-center border-t border-b mt-6 mb-1 p-1 px-2">
+                                <p class="font-semibold text-gray-500">Headers</p>
+                            </div>
+                            <table class="min-w-full px-2 mb-1">
+                                <tbody>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td
+                                            class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] font-semibold text-gray-700 w-1/6"
+                                    >
+                                        Param name
+                                    </td>
+                                    <td
+                                            class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12"
+                                    >
+                                        Type
+                                    </td>
+                                    <td
+                                            class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500"
+                                    >
+                                        Description
+                                    </td>
+                                    <td
+                                            class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
+                                    >
+                                        Required
+                                    </td>
+                                </tr>
+                                <tr class="text-[12px] md:text-[15px]">
+                                    <td
+                                            class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
+                                    >
+                                        Authorization
+                                    </td>
+                                    <td
+                                            class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/12"
+                                    >
+                                        String
+                                    </td>
+                                    <td
+                                            class="py-1 px-3 border-t border-r border-b border-[#DBDBDB] text-gray-500"
+                                    >
+                                        Bearer {{accessToken}}<br/>
+                                        accessToken can be retrieved by calling 'Get Access
+                                        Token’ api
+                                    </td>
+                                    <td
+                                            class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
+                                    >
+                                        Yes
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-center border-t border-b mt-6 p-1">
+                                <p class="font-semibold text-gray-500">
+                                    Sample Request Payload
+                                </p>
+                            </div>
+                            <div class="overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                      <pre>
+                                       <code>
+                                         curl --location '{{baseUrl}}/company/list' \
+                                         --header 'Authorization: Bearer {{accessToken}}'
+                                       </code>
+                                   </pre>
+                                </div>
+                            </div>
+                            <div class="text-center border-t border-b mt-6 p-1">
+                                <p class="font-semibold text-gray-500">
+                                    Sample Response Payload
+                                </p>
+                            </div>
+                            <div class="overflow-x-auto horizontal-taskbar rounded m-3">
+                                <div class="-ml-80">
+                      <pre>
+                                       <code>
+                                           {
+                                               "status": "SUCCESS",
+                                               "companies": [
+                                                   {
+                                                       "_id": "65dddd88217b10a8b17ee14e",
+                                                       "logo": "https://intercity-storage.s3.amazonaws.com/companyLogo/temp/AaL9Hk2kpc_U_65dddb64d4deb7f5269a34c3.png",
+                                                       "name": "AL-KHANJRY TRANSPORT",
+                                                       "displayName": "AL-KHANJRY TRANSPORT"
+                                                   },
+                                                   {
+                                                       "_id": "67a3024a856266836c2fe551",
+                                                       "logo": "https://intercity-storage.s3.amazonaws.com/companyLogo/5agZsAG6Lz_U_657ac623214e973eae9f0835.jpeg",
+                                                       "name": "ASAD Travel",
+                                                       "displayName": "ASAD Travel"
+                                                   }
+                                               ]
+                                           }
+                                       </code>
+                                   </pre>
                                 </div>
                             </div>
                         </div>
