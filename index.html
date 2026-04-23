@@ -876,7 +876,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/v2/trip/search-trips
+                                            {{baseUrl}}/v3/trip/search-trips
                                         </td>
                                     </tr>
                                     </tbody>
@@ -1108,7 +1108,7 @@
                                 <div class="-ml-80">
                       <pre>
                                       <code>
-                                        curl --location '{{baseUrl}}/v2/trip/search-trips?from=Dhaka&to=Cox%27s%20Bazar&busType=ALL&date=2024-02-05' \
+                                        curl --location '{{baseUrl}}/v3/trip/search-trips?from=Dhaka&to=Cox%27s%20Bazar&busType=ALL&date=2024-02-05' \
                                         --header 'Authorization: Bearer {{accessToken}}'
                                       </code>
                                   </pre>
@@ -1178,6 +1178,9 @@
                                                     "boardingAt": "2024-02-04T18:04:00.000Z",
                                                     "boardingDate": "2024-02-05",
                                                     "boardingTime": "00:04",
+                                                    "droppingAt": "2024-02-05T06:04:00.000Z",
+                                                    "droppingDate": "2024-02-05",
+                                                    "droppingTime": "12:04",
                                                     "fareHeading": "1000 - 1500"
                                                 },
                                                 {
@@ -1209,6 +1212,9 @@
                                                     "boardingAt": "2024-02-04T18:20:00.000Z",
                                                     "boardingDate": "2024-02-05",
                                                     "boardingTime": "00:20",
+                                                    "droppingAt": "2024-02-05T06:20:00.000Z",
+                                                    "droppingDate": "2024-02-05",
+                                                    "droppingTime": "12:20",
                                                     "fareHeading": "450 - 1200"
                                                 },
                                                 {
@@ -1240,6 +1246,9 @@
                                                     "boardingAt": "2024-02-04T18:30:00.000Z",
                                                     "boardingDate": "2024-02-05",
                                                     "boardingTime": "00:30",
+                                                    "droppingAt": "2024-02-05T06:30:00.000Z",
+                                                    "droppingDate": "2024-02-05",
+                                                    "droppingTime": "12:30",
                                                     "fareHeading": "2200"
                                                 }
                                             ]
