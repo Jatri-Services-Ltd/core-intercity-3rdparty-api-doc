@@ -1181,6 +1181,7 @@
                                                     "droppingAt": "2024-02-05T06:04:00.000Z",
                                                     "droppingDate": "2024-02-05",
                                                     "droppingTime": "12:04",
+                                                    "isEidTrip": true,
                                                     "fareHeading": "1000 - 1500"
                                                 },
                                                 {
@@ -1215,6 +1216,7 @@
                                                     "droppingAt": "2024-02-05T06:20:00.000Z",
                                                     "droppingDate": "2024-02-05",
                                                     "droppingTime": "12:20",
+                                                    "isEidTrip": true,
                                                     "fareHeading": "450 - 1200"
                                                 },
                                                 {
@@ -1249,6 +1251,7 @@
                                                     "droppingAt": "2024-02-05T06:30:00.000Z",
                                                     "droppingDate": "2024-02-05",
                                                     "droppingTime": "12:30",
+                                                    "isEidTrip": true,
                                                     "fareHeading": "2200"
                                                 }
                                             ]
@@ -14300,7 +14303,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/v3/ticket-purchase
+                                            {{baseUrl}}/v2/ticket-purchase
                                         </td>
                                     </tr>
                                     </tbody>
@@ -14470,7 +14473,7 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location '{{baseUrl}}/v3/ticket-purchase' \
+                                          curl --location '{{baseUrl}}/v2/ticket-purchase' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
                                           --data '{
@@ -14520,6 +14523,7 @@
                                                   "seatFare": 3000,
                                                   "payable": 3000,
                                                   "paid": 3000,
+                                                  "isTicketCancelable": false,
                                                   "ticketDateTime": "2024-02-04T16:15:23.000Z",
                                                   "tripDateTime": "2024-02-04T23:59:00.000Z",
                                                   "boardingDateTime": "2024-02-04T23:59:00.000Z",
@@ -14587,7 +14591,7 @@
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
                                     >
-                                        /v3/ticket-purchase
+                                        /v2/ticket-purchase
                                     </td>
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
@@ -14619,7 +14623,7 @@
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
                                     >
-                                        /v3/ticket-purchase
+                                        /v2/ticket-purchase
                                     </td>
                                     <td
                                             class="py-1 pl-4 border-t border-r border-b border-[#DBDBDB] text-gray-500 w-1/6"
@@ -15062,7 +15066,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/v2/ticket-status
+                                            {{baseUrl}}/v3/ticket-status
                                         </td>
                                     </tr>
                                     </tbody>
@@ -15232,12 +15236,10 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location --request GET '{{baseUrl}}/v2/ticket-status' \
+                                          curl --location --request GET '{{baseUrl}}/v2/ticket-status?dtId=6a0444f59b4dcc0f5b97296f' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
-                                          --data '{
-                                              "dtId": "65bf629bf23b0e523e548ff1"
-                                          }'
+                                          --data ''
                                         </code>
                                     </pre>
                                 </div>
@@ -15361,7 +15363,7 @@
                                         <td
                                                 class="py-1 pl-4 border-r border-b border-[#DBDBDB] text-gray-500 w-auto"
                                         >
-                                            {{baseUrl}}/v3/ticket-search
+                                            {{baseUrl}}/v3/ticket-search?pnrOrPhone=
                                         </td>
                                     </tr>
                                     </tbody>
@@ -15531,12 +15533,10 @@
                                 <div class="-ml-80">
                       <pre>
                                         <code>
-                                          curl --location --request GET '{{baseUrl}}/v3/ticket-search' \
+                                          curl --location --request GET '{{baseUrl}}/v3/ticket-search?pnrOrPhone=PWq2pXQmBWDqb52' \
                                           --header 'Content-Type: application/json' \
                                           --header 'Authorization: Bearer {{accessToken}}' \
-                                          --data '{
-                                              "pnrOrPhone": "S2Kwe8nVnYDidLh"
-                                          }'
+                                          --data ''
                                         </code>
                                     </pre>
                                 </div>
@@ -15583,6 +15583,7 @@
                                                       "boardingDateTime": "2024-02-04T17:59:00.000Z",
                                                       "reportingDateTime": "2024-02-04T17:49:00.000Z",
                                                       "dtId": "65bf629bf23b0e523e548ff1",
+                                                      "isTicketCancelable": false,
                                                       "operator": "Jeddah Express Limited"
                                                   }
                                               ]
